@@ -64,11 +64,11 @@ jobs:
         with:
           name: allure-report
 
-      - name: Deploy Allure Report to main branch # git hub pages have permission issues i think
+      - name: Deploy Allure Report to Report branch # git hub pages have permission issues i think
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
+          publish_branch: report-branch
           publish_dir: allure-report
 
   notify:
