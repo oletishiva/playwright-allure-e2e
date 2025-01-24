@@ -1,0 +1,214 @@
+<testsuites id="" name="" tests="20" failures="2" skipped="0" errors="0" time="14.222315">
+<testsuite name="customFixtures.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.151" errors="0">
+<testcase name="Should login with test data" classname="customFixtures.spec.ts" time="3.151">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/customFixtures-Should-login-with-test-data-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="fixtures.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="2" failures="1" skipped="0" time="11.147" errors="0">
+<testcase name="Sign In buttion is Visible" classname="fixtures.spec.ts" time="8.306">
+<failure message="fixtures.spec.ts:4:5 Sign In buttion is Visible" type="FAILURE">
+<![CDATA[  [chromium] › fixtures.spec.ts:4:5 › Sign In buttion is Visible ───────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('button', { name: 'Signin' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Signin' })
+
+
+       8 | await page.goto('https://binaryville.com/account')
+       9 | const singInButton= page.getByRole('button',{name:'Signin'})
+    > 10 | await expect(singInButton).toBeVisible();
+         |                            ^
+      11 | await browser.close()
+      12 |
+      13 |
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/fixtures.spec.ts:10:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/fixtures-Sign-In-buttion-is-Visible-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/fixtures-Sign-In-buttion-is-Visible-chromium/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Sign In Button Visible check using builtIn fixture" classname="fixtures.spec.ts" time="2.841">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/fixtures-Sign-In-Button-Visible-check-using-builtIn-fixture-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="fixtureScopeAndIsolation.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="3" failures="0" skipped="0" time="0.006" errors="0">
+<testcase name="Test 1" classname="fixtureScopeAndIsolation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[test 1 counter: 1
+]]>
+</system-out>
+</testcase>
+<testcase name="Test 2" classname="fixtureScopeAndIsolation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[test 2 counter: 1
+]]>
+</system-out>
+</testcase>
+<testcase name="Test 3" classname="fixtureScopeAndIsolation.spec.ts" time="0">
+<system-out>
+<![CDATA[test 3 counter: 1
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="loginTestsWithTestData.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.555" errors="0">
+<testcase name="should login using test1@example.come" classname="loginTestsWithTestData.spec.ts" time="3.361">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-test1-example-come-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="should login using john@example.come" classname="loginTestsWithTestData.spec.ts" time="3.194">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-john-example-come-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="LoginTestUsingPOM.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.669" errors="0">
+<testcase name="should login using POM" classname="LoginTestUsingPOM.spec.ts" time="2.669">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/LoginTestUsingPOM-should-login-using-POM-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.796" errors="0">
+<testcase name="Login success" classname="test.spec.ts" time="2.796">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/test-Login-success-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="customFixtures.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="1" failures="0" skipped="0" time="3.59" errors="0">
+<testcase name="Should login with test data" classname="customFixtures.spec.ts" time="3.59">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/customFixtures-Should-login-with-test-data-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="fixtures.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="2" failures="1" skipped="0" time="10.856" errors="0">
+<testcase name="Sign In buttion is Visible" classname="fixtures.spec.ts" time="7.588">
+<failure message="fixtures.spec.ts:4:5 Sign In buttion is Visible" type="FAILURE">
+<![CDATA[  [firefox] › fixtures.spec.ts:4:5 › Sign In buttion is Visible ────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('button', { name: 'Signin' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Signin' })
+
+
+       8 | await page.goto('https://binaryville.com/account')
+       9 | const singInButton= page.getByRole('button',{name:'Signin'})
+    > 10 | await expect(singInButton).toBeVisible();
+         |                            ^
+      11 | await browser.close()
+      12 |
+      13 |
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/fixtures.spec.ts:10:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/fixtures-Sign-In-buttion-is-Visible-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/fixtures-Sign-In-buttion-is-Visible-firefox/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Sign In Button Visible check using builtIn fixture" classname="fixtures.spec.ts" time="3.268">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/fixtures-Sign-In-Button-Visible-check-using-builtIn-fixture-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="fixtureScopeAndIsolation.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="3" failures="0" skipped="0" time="0.008" errors="0">
+<testcase name="Test 1" classname="fixtureScopeAndIsolation.spec.ts" time="0.003">
+<system-out>
+<![CDATA[test 1 counter: 1
+]]>
+</system-out>
+</testcase>
+<testcase name="Test 2" classname="fixtureScopeAndIsolation.spec.ts" time="0.004">
+<system-out>
+<![CDATA[test 2 counter: 1
+]]>
+</system-out>
+</testcase>
+<testcase name="Test 3" classname="fixtureScopeAndIsolation.spec.ts" time="0.001">
+<system-out>
+<![CDATA[test 3 counter: 1
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="loginTestsWithTestData.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="2" failures="0" skipped="0" time="7.071" errors="0">
+<testcase name="should login using test1@example.come" classname="loginTestsWithTestData.spec.ts" time="3.679">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-test1-example-come-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="should login using john@example.come" classname="loginTestsWithTestData.spec.ts" time="3.392">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-john-example-come-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="LoginTestUsingPOM.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="1" failures="0" skipped="0" time="3.147" errors="0">
+<testcase name="should login using POM" classname="LoginTestUsingPOM.spec.ts" time="3.147">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/LoginTestUsingPOM-should-login-using-POM-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test.spec.ts" timestamp="2025-01-24T09:42:02.595Z" hostname="firefox" tests="1" failures="0" skipped="0" time="3.007" errors="0">
+<testcase name="Login success" classname="test.spec.ts" time="3.007">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/test-Login-success-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
