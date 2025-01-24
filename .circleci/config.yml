@@ -13,16 +13,12 @@ jobs:
       - checkout
 
       - run:
-          name: Install Playwright Dependencies
-          command: sudo npx playwright install-deps
-
-      - run:
           name: Install Node Dependencies
-          command: npm install
+          command: npm install playwright@latest --save-dev
 
       - run:
           name: Install Playwright Browsers
-          command: npx playwright install
+          command: npx playwright install --with-deps
 
       - run:
           name: Run Playwright Tests with Allure
