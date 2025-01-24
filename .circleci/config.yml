@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-executor:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20
     working_directory: ~/project
 
 jobs:
@@ -11,12 +11,6 @@ jobs:
     executor: node-executor
     steps:
       - checkout
-
-      - run:
-          name: Update Repositories
-          command: |
-            sudo sed -i 's/deb.debian.org\/debian/deb.debian.org\/debian-archive/g' /etc/apt/sources.list
-            sudo apt-get update
 
       - run:
           name: Install Playwright Dependencies
