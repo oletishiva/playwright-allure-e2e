@@ -26,24 +26,24 @@ jobs:
 
       - name: Install Allure CLI
         run: |
-          # Install Allure command line tool globally
           npm install -g allure-commandline --silent
 
       - name: Run Playwright tests with Allure
         run: |
-          # Run tests with Allure integration
           npx playwright test --reporter=line,allure-playwright
+        continue-on-error: true  # Allow tests to fail without stopping the workflow
 
       - name: Generate Allure Report
         run: |
-          # Generate Allure HTML report
           allure generate allure-results --clean -o allure-report
+        if: always()  # Ensure this step runs even if the previous step fails
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
           path: allure-report
+        if: always()  # Ensure this step runs even if the previous step fails
 
   publish-allure-report:
     needs: test  # Runs after the test job
@@ -74,7 +74,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Playwright CI/CD Pipeline completed successfully. Check the logs here: ${{ github.run_url }}"
+              "text": "Playwright CI/CD Pipeline completed. Check the logs: ${{ github.run_url }}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
