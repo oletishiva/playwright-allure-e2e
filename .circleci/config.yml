@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-executor:
     docker:
-      - image: circleci/node:16  # Use Node.js 16 Docker image
+      - image: circleci/node:16
     working_directory: ~/project
 
 jobs:
@@ -28,12 +28,13 @@ jobs:
             mkdir -p allure-report && npx allure generate allure-results --clean -o allure-report
 
       - store_artifacts:
-          path: allure-report  # Save Allure report as CircleCI artifact
+          path: allure-report
           destination: allure-report
 
       - run:
           name: Send Slack Notification
           command: |
+            # Define success or failure based on the previous step
             if [ $? -eq 0 ]; then
               STATUS_MESSAGE="Build and Tests Passed! 🎉"
               COLOR="good"
@@ -41,7 +42,8 @@ jobs:
               STATUS_MESSAGE="Build or Tests Failed! ❌"
               COLOR="danger"
             fi
-            
+
+            # Send the notification
             curl -X POST -H 'Content-type: application/json' \
             --data "{
               \"attachments\": [
@@ -53,46 +55,16 @@ jobs:
                     { \"title\": \"Project\", \"value\": \"$CIRCLE_PROJECT_REPONAME\", \"short\": true },
                     { \"title\": \"Branch\", \"value\": \"$CIRCLE_BRANCH\", \"short\": true },
                     { \"title\": \"Build URL\", \"value\": \"$CIRCLE_BUILD_URL\", \"short\": false },
-                    { \"title\": \"Allure Report\", \"value\": \"https://<your-username>.github.io/<repository-name>/\", \"short\": false }
+                    { \"title\": \"Allure Report\", \"value\": \"https://oletishiva.github.io/playwright-allure-e2e/\", \"short\": false }
                   ]
                 }
               ]
-            }" $SLACK_WEBHOOK_URL
+            }" "$SLACK_WEBHOOK_URL"
         environment:
-          SLACK_WEBHOOK_URL: $SLACK_WEBHOOK_URL  # Ensure the webhook URL is added as an environment variable in CircleCI
-
-  deploy-allure-report:
-    executor: node-executor
-
-    steps:
-      - checkout
-
-      - run:
-          name: Install Git
-          command: sudo apt-get install git -y
-
-      - run:
-          name: Download Allure Report
-          command: |
-            git clone https://github.com/oletishiva/playwright-allure-e2e.git report-branch
-            cd report-branch && mkdir -p allure-report
-            cp -r ~/project/allure-report/* ./allure-report
-
-      - run:
-          name: Deploy Allure Report to GitHub Pages
-          command: |
-            cd report-branch
-            git config --global user.name "oletishiva"
-            git config --global user.email "oletishiva@gmail.com"
-            git add .
-            git commit -m "Update Allure Report"
-            git push origin report-branch
+          SLACK_WEBHOOK_URL: $SLACK_WEBHOOK_URL
 
 workflows:
   version: 2
-  test-and-deploy:
+  test-workflow:
     jobs:
       - test
-      - deploy-allure-report:
-          requires:
-            - test
