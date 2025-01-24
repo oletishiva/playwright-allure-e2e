@@ -13,6 +13,14 @@ jobs:
       - checkout
 
       - run:
+          name: Install Java
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y openjdk-11-jdk
+            export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+            echo "JAVA_HOME is set to $JAVA_HOME"
+
+      - run:
           name: Install Node Dependencies
           command: npm install playwright@latest --save-dev
 
