@@ -40,4 +40,4 @@ workflows:
   version: 2
   test-workflow:
     jobs:
-      - build-and-test
+      - test
