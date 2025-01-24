@@ -1,12 +1,14 @@
 name: Playwright Tests with Allure Reports
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
+  #pull_request:
+    #branches:
+      #- main
+  workflow_dispatch: # Keep this to allow manual triggering of the workflow
+  pull_request:      # (Optional) Trigger only on pull requests
 
 jobs:
   test:
