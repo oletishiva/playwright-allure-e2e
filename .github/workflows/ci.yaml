@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Playwright Browsers
+        run: npx playwright install  #
+
       - name: Install Allure CLI
         run: |
           npm install -g allure-commandline --silent
@@ -61,10 +64,11 @@ jobs:
         with:
           name: allure-report
 
-      - name: Deploy Allure Report to GitHub Pages
+      - name: Deploy Allure Report to main branch # git hub pages have permission issues i think
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
           publish_dir: allure-report
 
   notify:
