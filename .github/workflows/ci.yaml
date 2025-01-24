@@ -81,7 +81,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Playwright CI/CD Pipeline completed. Check the logs: ${{ github.run_url }}"
+              "text": "Playwright CI/CD Pipeline completed. <${{ github.run_url }}|View Logs>\nView Allure Report: <https://oletishiva.github.io/playwright-allure-e2e/|View Allure Report>"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
