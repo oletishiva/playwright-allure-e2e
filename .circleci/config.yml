@@ -34,37 +34,10 @@ jobs:
       - run:
           name: Send Slack Notification
           command: |
-            # Define success or failure based on the previous step
-            if [ $? -eq 0 ]; then
-              STATUS_MESSAGE="Build and Tests Passed! 🎉"
-              COLOR="good"
-            else
-              STATUS_MESSAGE="Build or Tests Failed! ❌"
-              COLOR="danger"
-            fi
-
-            # Send the notification
-            curl -X POST -H 'Content-type: application/json' \
-            --data "{
-              \"attachments\": [
-                {
-                  \"fallback\": \"CircleCI Build Notification\",
-                  \"color\": \"$COLOR\",
-                  \"text\": \"$STATUS_MESSAGE\",
-                  \"fields\": [
-                    { \"title\": \"Project\", \"value\": \"$CIRCLE_PROJECT_REPONAME\", \"short\": true },
-                    { \"title\": \"Branch\", \"value\": \"$CIRCLE_BRANCH\", \"short\": true },
-                    { \"title\": \"Build URL\", \"value\": \"$CIRCLE_BUILD_URL\", \"short\": false },
-                    { \"title\": \"Allure Report\", \"value\": \"https://oletishiva.github.io/playwright-allure-e2e/\", \"short\": false }
-                  ]
-                }
-              ]
-            }" "$SLACK_WEBHOOK_URL"
-        environment:
-          SLACK_WEBHOOK_URL: $SLACK_WEBHOOK_URL
+            echo "Sending Slack Notification..." 
 
 workflows:
   version: 2
   test-workflow:
     jobs:
-      - test
+      - build-and-test
