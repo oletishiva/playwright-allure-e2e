@@ -49,6 +49,9 @@ jobs:
     needs: test  # Runs after the test job
     runs-on: ubuntu-latest
 
+    permissions:  # Allow write permissions for Pages
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

@@ -6,7 +6,7 @@ const browser= await chromium.launch()
 const page= await browser.newPage();
 
 await page.goto('https://binaryville.com/account')
-const singInButton= page.getByRole('button',{name:'Signin'})
+const singInButton= page.getByRole('button',{name:'Sign in'})
 await expect(singInButton).toBeVisible();
 await browser.close()
 
