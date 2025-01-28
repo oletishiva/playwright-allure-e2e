@@ -1,7 +1,5 @@
 import { test, Page } from '@playwright/test';
 import { HomePage } from '../page-objects/HomePage';
-test('Book a hotel in Columbia for the next 5 days', async ({ page }: { page: Page }) => {
-});
 
 test('Book a hotel in Columbia for the next 5 days', async ({ page }: { page: Page }) => {
   const homePage = new HomePage(page);
