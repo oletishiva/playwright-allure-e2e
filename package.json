@@ -12,5 +12,8 @@
     "@types/node": "^22.10.7",
     "allure-commandline": "^2.32.0",
     "allure-playwright": "^3.0.9"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13"
   }
 }
