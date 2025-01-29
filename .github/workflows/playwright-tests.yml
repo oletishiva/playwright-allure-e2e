@@ -37,14 +37,17 @@ jobs:
       - name: Install Java (Required for Allure)
         run: apt-get update && apt-get install -y openjdk-11-jdk  # Install Java without sudo
 
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline --silent
+      - name: Install Allure CLI and Playwright Plugin
+        run: npm install -g allure-commandline allure-playwright --silent
 
       - name: Run Playwright tests with Allure
         run: |
           mkdir -p allure-results  # Ensure directory exists
           npx playwright test --reporter=line,allure-playwright --workers=2
         continue-on-error: true  # Allow tests to fail without stopping the workflow
+
+      - name: Debug: Check Allure Results Before Uploading
+        run: ls -R allure-results || echo "No Allure results found!"
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
@@ -70,20 +73,23 @@ jobs:
       - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
-          path: allure-reports
+          path: allure-results
           pattern: allure-results-*
           merge-multiple: true
 
+      - name: Debug: Check Downloaded Allure Results Before Merging
+        run: ls -R allure-results || echo "No Allure results found!"
+
       - name: Merge Allure Reports
         run: |
-          mkdir -p allure-reports  # Ensure directory exists
-          npx playwright merge-reports --reporter=html ./allure-reports
+          mkdir -p allure-results  # Ensure directory exists
+          npx playwright merge-reports --reporter=html allure-results/
 
       - name: Upload Merged Report
         uses: actions/upload-artifact@v4
         with:
           name: merged-allure-report
-          path: allure-reports
+          path: allure-results
         if: always()
 
   publish-allure-report:
