@@ -106,13 +106,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: merged-allure-report
+          path: allure-report  # Ensure it is downloaded correctly
 
-      - name: Deploy Allure Report to GitHub Pages
+      - name: Deploy Allure Report to Report Branch  # GitHub Pages deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: report-branch
-          publish_dir: merged-allure-report
+          publish_dir: allure-report  # Correct directory for publishing
 
   notify:
     needs: merge-reports
