@@ -1,4 +1,4 @@
-name: Playwright Tests with Allure Reports & Parallel Execution
+name: Playwright Tests with Allure Reports & Parallel Execution 
 
 on:
   workflow_dispatch:
