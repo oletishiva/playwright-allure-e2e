@@ -1,4 +1,4 @@
-name: Playwright Tests with Allure Reports AND Parallel Execution 
+name: Playwright Tests with Allure Reports & Parallel Execution
 
 on:
   workflow_dispatch:
@@ -46,8 +46,13 @@ jobs:
           npx playwright test --reporter=line,allure-playwright --workers=2
         continue-on-error: true  # Allow tests to fail without stopping the workflow
 
-      - name: Debug: Check Allure Results Before Uploading
-        run: ls -R allure-results || echo "No Allure results found!"
+      - name: Debug: Check Allure Results Before Uploading  # FIXED STEP
+        run: |
+          if [ -d "allure-results" ]; then
+            ls -R allure-results
+          else
+            echo "No Allure results found!"
+          fi
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
@@ -78,7 +83,12 @@ jobs:
           merge-multiple: true
 
       - name: Debug: Check Downloaded Allure Results Before Merging
-        run: ls -R allure-results || echo "No Allure results found!"
+        run: |
+          if [ -d "allure-results" ]; then
+            ls -R allure-results
+          else
+            echo "No Allure results found!"
+          fi
 
       - name: Merge Allure Reports
         run: |
