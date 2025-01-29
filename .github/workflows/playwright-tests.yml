@@ -1,8 +1,8 @@
-name: Playwright Tests with Parallel Execution & Allure Reports
+name: Playwright Tests with Allure Reports & Parallel Execution
 
 on:
-  workflow_dispatch:  # Allows manual triggering
-  pull_request:       # Runs on pull request
+  workflow_dispatch:
+  pull_request:
 
 jobs:
   test:
@@ -10,10 +10,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        container: [1, 2, 3]  # Defines how many parallel containers to use
+        container: [1, 2, 3]  # Run tests in parallel using 3 containers
 
     container:
-      image: mcr.microsoft.com/playwright:v1.47.2-jammy  # Uses Playwright Docker image
+      image: mcr.microsoft.com/playwright:v1.47.2-jammy
       env:
         HOME: /root  # Fix Firefox launch issue
 
@@ -34,42 +34,24 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps  # Installs required browsers
 
-      - name: Cache Playwright Browsers
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            playwright-browsers-${{ runner.os }}-
-
       - name: Install Java (Required for Allure)
-        run: apt update && apt install -y openjdk-11-jdk
+        run: apt-get update && apt-get install -y openjdk-11-jdk  # Install Java without sudo
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline --silent
 
-      - name: Run Playwright tests in Parallel
+      - name: Run Playwright tests with Allure
         run: |
-          TEST_FILES=$(ls tests/*.spec.ts | awk "NR % ${{ strategy.job-total }} == $(( ${{ matrix.container }} - 1 ))")
-          if [[ -z "$TEST_FILES" ]]; then
-            echo "No tests assigned to this container"
-            exit 0
-          fi
-          echo "Running tests: $TEST_FILES"
-          npx playwright test $TEST_FILES --reporter=line,allure-playwright --workers=2
+          mkdir -p allure-results  # Ensure directory exists
+          npx playwright test --reporter=line,allure-playwright --workers=2
         continue-on-error: true  # Allow tests to fail without stopping the workflow
 
-      - name: Generate Allure Report
-        run: |
-          allure generate allure-results --clean -o allure-report
-        if: always()  # Runs even if previous steps fail
-
-      - name: Upload Allure Report
+      - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ matrix.container }}
-          path: allure-report
-        if: always()  # Runs even if tests fail
+          name: allure-results-${{ matrix.container }}
+          path: allure-results
+        if: always()
 
   merge-reports:
     needs: test  # Runs after all test jobs
@@ -85,17 +67,19 @@ jobs:
       - name: Install Allure CLI
         run: npm install -g allure-commandline --silent
 
-      - name: Download Allure Reports
+      - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
           path: allure-reports
-          pattern: allure-report-*
+          pattern: allure-results-*
           merge-multiple: true
 
       - name: Merge Allure Reports
-        run: npx playwright merge-reports --reporter=html ./allure-reports
+        run: |
+          mkdir -p allure-reports  # Ensure directory exists
+          npx playwright merge-reports --reporter=html ./allure-reports
 
-      - name: Upload Final Merged Report
+      - name: Upload Merged Report
         uses: actions/upload-artifact@v4
         with:
           name: merged-allure-report
@@ -103,7 +87,7 @@ jobs:
         if: always()
 
   publish-allure-report:
-    needs: merge-reports  # Runs after merging reports
+    needs: merge-reports
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -125,7 +109,7 @@ jobs:
           publish_dir: merged-allure-report
 
   notify:
-    needs: merge-reports  # Runs after merging reports
+    needs: merge-reports
     runs-on: ubuntu-latest
     steps:
       - name: Send Slack Notification
