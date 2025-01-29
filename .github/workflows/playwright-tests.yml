@@ -43,7 +43,7 @@ jobs:
             playwright-browsers-${{ runner.os }}-
 
       - name: Install Java (Required for Allure)
-        run: apt update && sudo apt install -y openjdk-11-jdk
+        run: apt update && apt install -y openjdk-11-jdk
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline --silent
