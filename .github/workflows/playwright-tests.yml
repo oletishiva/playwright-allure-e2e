@@ -46,7 +46,7 @@ jobs:
           npx playwright test --reporter=line,allure-playwright --workers=2
         continue-on-error: true  # Allow tests to fail without stopping the workflow
 
-      - name: Debug: Check Allure Results Before Uploading  # FIXED STEP
+      - name: Check Allure Results Before Uploading  # FIXED STEP
         run: |
           if [ -d "allure-results" ]; then
             ls -R allure-results
@@ -82,7 +82,7 @@ jobs:
           pattern: allure-results-*
           merge-multiple: true
 
-      - name: Debug: Check Downloaded Allure Results Before Merging
+      - name: Check Downloaded Allure Results Before Merging
         run: |
           if [ -d "allure-results" ]; then
             ls -R allure-results
