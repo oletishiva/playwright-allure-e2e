@@ -38,7 +38,7 @@ jobs:
         continue-on-error: true  # Allow tests to fail without stopping the workflow
 
       - name: Merge Playwright Reports
-        run: npx playwright merge-reports --reporter allure --outputDir allure-results
+        run: npx playwright merge-reports --reporter allure allure-results
         if: always()
 
       - name: Generate Allure Report
