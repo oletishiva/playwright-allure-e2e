@@ -1,14 +1,8 @@
 name: Playwright Tests with Allure Reports
 
 on:
-  #push:
-    #branches:
-      #- main
-  #pull_request:
-    #branches:
-      #- main
-  workflow_dispatch: # Keep this to allow manual triggering of the workflow
-  pull_request:      # (Optional) Trigger only on pull requests
+  workflow_dispatch: # Allow manual triggering of the workflow
+  pull_request:      # Trigger on pull requests
 
 permissions:
   contents: write
@@ -32,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Install Playwright Browsers
-        run: npx playwright install  #
+        run: npx playwright install
 
       - name: Install Allure CLI
         run: |
@@ -44,9 +38,9 @@ jobs:
         continue-on-error: true  # Allow tests to fail without stopping the workflow
 
       - name: Merge Playwright Reports
-        run: npx playwright merge-reports --output allure-results
+        run: npx playwright merge-reports --reporter allure --outputDir allure-results
         if: always()
-      
+
       - name: Generate Allure Report
         run: |
           if [ -d "allure-results" ] && [ "$(ls -A allure-results)" ]; then
@@ -78,7 +72,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-report
-      
+
       - name: Verify Allure Report Before Deploying
         run: |
           if [ -d "allure-report" ] && [ "$(ls -A allure-report)" ]; then
@@ -88,13 +82,12 @@ jobs:
               exit 1
           fi
 
-          - name: Deploy Allure Report to Report branch
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            personal_token: ${{ secrets.GH_PAGES_TOKEN }}
-            publish_branch: report-branch
-            publish_dir: allure-report
-  
+      - name: Deploy Allure Report to Report branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use GITHUB_TOKEN instead of personal_token
+          publish_branch: report-branch
+          publish_dir: allure-report
 
   notify:
     needs: test  # Runs after the test job
