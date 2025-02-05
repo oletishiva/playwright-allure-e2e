@@ -1,5 +1,5 @@
 import { test as base, expect } from '@playwright/test';
-import { LoginPage } from '../page-objects/login-page.pom';
+import { LoginPage } from '../pages/LoginPage';
 
 
 export const test = base.extend<{ loginPage: LoginPage; url: string }>({

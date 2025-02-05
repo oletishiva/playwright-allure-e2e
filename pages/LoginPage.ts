@@ -1,4 +1,4 @@
-import { Locator,Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 
 export class LoginPage {
 /*
@@ -24,10 +24,12 @@ private page: Page;
 
     constructor(page: Page) {
         this.page = page;
+
     }
 
     async enterEmail(email: string): Promise<void> {
         await this.page.getByRole("textbox", { name: 'Email' }).fill(email);
+       
     }
 
     async enterPassword(password: string): Promise<void> {

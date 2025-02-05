@@ -1,4 +1,4 @@
-import {test,expect } from '../page-objects/fixture'
+import {test,expect } from '../fixtures/fixture'
 
 
 

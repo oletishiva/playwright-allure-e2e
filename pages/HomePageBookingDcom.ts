@@ -7,7 +7,7 @@ import exp from "constants";
 /**
  * Represents the home page of the application.
  */
-export class HomePage extends BasePage {
+export class HomePageBookingDcom extends BasePage {
   // Constructor to ensure the page object is passed correctly.
   constructor(page: Page) {
     super(page);

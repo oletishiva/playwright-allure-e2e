@@ -11,16 +11,10 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
-      [
-        "/Users/shivaoleti/CodeRepoPractice/playwrightDP/utils/MyCustomReporter.ts",
-        {
-          "customOption": "some value"
-        }
-      ],
       [
         "/Users/shivaoleti/CodeRepoPractice/playwrightDP/node_modules/allure-playwright/dist/cjs/index.js",
         {
@@ -84,7 +78,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.49.1",
-    "workers": 1,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
@@ -96,6 +90,300 @@
       "specs": [
         {
           "title": "Book a hotel in Columbia for the next 5 days",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30673,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts",
+                        "column": 13,
+                        "line": 42
+                      },
+                      "message": "Error: Failed to dismiss the sign-in popup: {error.message}\n\n\u001b[90m   at \u001b[39m../pages/HomePageBookingDcom.ts:42\n\n\u001b[0m \u001b[90m 40 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcrossPopUpToSignIn)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`Failed to dismiss the sign-in popup: {error.message}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 |\u001b[39m     }\n \u001b[90m 44 |\u001b[39m   }\n \u001b[90m 45 |\u001b[39m\u001b[0m\n\u001b[2m    at HomePageBookingDcom.dismissSignInPopup (/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts:42:13)\u001b[22m\n\u001b[2m    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/bookingTest.spec.ts:11:3\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:13.001Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "47e2408449e317670330-adcfa66c303f7a62b771",
+          "file": "bookingTest.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "Book a hotel in Columbia for the next 5 days",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "timedOut",
+                  "duration": 30092,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts",
+                        "column": 13,
+                        "line": 42
+                      },
+                      "message": "Error: Failed to dismiss the sign-in popup: {error.message}\n\n\u001b[90m   at \u001b[39m../pages/HomePageBookingDcom.ts:42\n\n\u001b[0m \u001b[90m 40 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcrossPopUpToSignIn)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`Failed to dismiss the sign-in popup: {error.message}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 |\u001b[39m     }\n \u001b[90m 44 |\u001b[39m   }\n \u001b[90m 45 |\u001b[39m\u001b[0m\n\u001b[2m    at HomePageBookingDcom.dismissSignInPopup (/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts:42:13)\u001b[22m\n\u001b[2m    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/bookingTest.spec.ts:11:3\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:17.158Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "47e2408449e317670330-ecc4f5ad5d136477a9eb",
+          "file": "bookingTest.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "loginTestsWithTestData.spec.ts",
+      "file": "loginTestsWithTestData.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "should login using test1@example.come",
+          "ok": true,
+          "tags": [
+            "example.come"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 3437,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:12.998Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/loginTestsWithTestData-should-login-using-test1-example-come-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e43af62a5a679228a77e-f703113ca82c843644f0",
+          "file": "loginTestsWithTestData.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "should login using john@example.come",
+          "ok": true,
+          "tags": [
+            "example.come"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 5095,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:12.998Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/loginTestsWithTestData-should-login-using-john-example-come-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e43af62a5a679228a77e-86e32bf2bd49491c09a8",
+          "file": "loginTestsWithTestData.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "should login using test1@example.come",
+          "ok": true,
+          "tags": [
+            "example.come"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 3375,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:17.681Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/loginTestsWithTestData-should-login-using-test1-example-come-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e43af62a5a679228a77e-0917c8f171d452a41b80",
+          "file": "loginTestsWithTestData.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "should login using john@example.come",
+          "ok": true,
+          "tags": [
+            "example.come"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 3183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:18.776Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/loginTestsWithTestData-should-login-using-john-example-come-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e43af62a5a679228a77e-80354432d3422c4a5291",
+          "file": "loginTestsWithTestData.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "LoginTestUsingPOM.spec.ts",
+      "file": "LoginTestUsingPOM.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "should login using POM",
           "ok": true,
           "tags": [],
           "tests": [
@@ -107,23 +395,473 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 16,
+                  "workerIndex": 3,
                   "status": "passed",
-                  "duration": 5247,
+                  "duration": 3465,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-01-28T17:46:03.307Z",
-                  "attachments": []
+                  "startTime": "2025-02-05T15:37:13.001Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/LoginTestUsingPOM-should-login-using-POM-chromium/video.webm"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "47e2408449e317670330-adcfa66c303f7a62b771",
-          "file": "bookingTest.spec.ts",
+          "id": "4ada5ee97aea7dbe7bfc-2af7340fe16feca4817b",
+          "file": "LoginTestUsingPOM.spec.ts",
           "line": 5,
+          "column": 5
+        },
+        {
+          "title": "should login using POM",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "status": "passed",
+                  "duration": 3177,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:19.798Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/LoginTestUsingPOM-should-login-using-POM-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ada5ee97aea7dbe7bfc-3dda1d3891fd27c677fc",
+          "file": "LoginTestUsingPOM.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ReactAppHomepageDashboardTest.spec.ts",
+      "file": "ReactAppHomepageDashboardTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Verify visibility of homepage items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 1000,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Page Title: playwright-test-admin Demo Application\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:13.005Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-e0d17-isibility-of-homepage-items-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-4b3fd3da166936ce40c7",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 15,
+          "column": 5
+        },
+        {
+          "title": "verify the page using screenshot",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "failed",
+                  "duration": 1964,
+                  "error": {
+                    "message": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png, writing actual.",
+                    "stack": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png, writing actual.\n    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5",
+                    "location": {
+                      "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                      "column": 5,
+                      "line": 36
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m test(\u001b[32m'verify the page using screenshot'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 35 |\u001b[39m     \u001b[90m// ✅ Takes a screenshot and compares it with the stored baseline\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m\"homepage.png\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m })\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m test(\u001b[32m'Verify page title'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                        "column": 5,
+                        "line": 36
+                      },
+                      "message": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png, writing actual.\n\n\u001b[0m \u001b[90m 34 |\u001b[39m test(\u001b[32m'verify the page using screenshot'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 35 |\u001b[39m     \u001b[90m// ✅ Takes a screenshot and compares it with the stored baseline\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m\"homepage.png\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m })\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m test(\u001b[32m'Verify page title'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[2m    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:14.392Z",
+                  "attachments": [
+                    {
+                      "name": "homepage-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png"
+                    },
+                    {
+                      "name": "homepage-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/homepage-actual.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/video.webm"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                    "column": 5,
+                    "line": 36
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-a42fbbaa1963b1931060",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 34,
+          "column": 5
+        },
+        {
+          "title": "Verify page title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:16.662Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardTest-Verify-page-title-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-577880ca3ea2d039431e",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 39,
+          "column": 5
+        },
+        {
+          "title": "Verify visibility of homepage items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 807,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Page Title: playwright-test-admin Demo Application\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:21.437Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-e0d17-isibility-of-homepage-items-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-53ba7bccc7f25abe3247",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 15,
+          "column": 5
+        },
+        {
+          "title": "verify the page using screenshot",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "failed",
+                  "duration": 3090,
+                  "error": {
+                    "message": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png, writing actual.",
+                    "stack": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png, writing actual.\n    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5",
+                    "location": {
+                      "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                      "column": 5,
+                      "line": 36
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m test(\u001b[32m'verify the page using screenshot'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 35 |\u001b[39m     \u001b[90m// ✅ Takes a screenshot and compares it with the stored baseline\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m\"homepage.png\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m })\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m test(\u001b[32m'Verify page title'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                        "column": 5,
+                        "line": 36
+                      },
+                      "message": "Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png, writing actual.\n\n\u001b[0m \u001b[90m 34 |\u001b[39m test(\u001b[32m'verify the page using screenshot'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\n \u001b[90m 35 |\u001b[39m     \u001b[90m// ✅ Takes a screenshot and compares it with the stored baseline\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m\"homepage.png\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m })\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m test(\u001b[32m'Verify page title'\u001b[39m\u001b[33m,\u001b[39m\u001b[36masync\u001b[39m({page})\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[2m    at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:22.249Z",
+                  "attachments": [
+                    {
+                      "name": "homepage-expected.png",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png"
+                    },
+                    {
+                      "name": "homepage-actual.png",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/homepage-actual.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/video.webm"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts",
+                    "column": 5,
+                    "line": 36
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-bfe80cd31caafbc91fc3",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 34,
+          "column": 5
+        },
+        {
+          "title": "Verify page title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:22.344Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/ReactAppHomepageDashboardTest-Verify-page-title-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7d1e11235a3babcdec07-7de85fea99a82fafd765",
+          "file": "ReactAppHomepageDashboardTest.spec.ts",
+          "line": 39,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "test.spec.ts",
+      "file": "test.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Login success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 2671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:16.831Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/test-Login-success-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b72ba50710186a3d173d-a533cfe2307003d70142",
+          "file": "test.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "Login success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 2744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-05T15:37:23.144Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/shivaoleti/CodeRepoPractice/playwrightDP/test-results/test-Login-success-firefox/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b72ba50710186a3d173d-83854d1f7dc779ad14ca",
+          "file": "test.spec.ts",
+          "line": 4,
           "column": 5
         }
       ]
@@ -131,11 +869,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-01-28T17:46:02.613Z",
-    "duration": 5987.520000000484,
-    "expected": 1,
+    "startTime": "2025-02-05T15:37:12.672Z",
+    "duration": 35468.441,
+    "expected": 12,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 4,
     "flaky": 0
   }
 }

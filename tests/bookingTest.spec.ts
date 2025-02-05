@@ -1,8 +1,8 @@
-import { test, Page } from '@playwright/test';
-import { HomePage } from '../page-objects/HomePage';
+import { test, Page, expect } from '@playwright/test';
+import { HomePageBookingDcom } from '../pages/HomePageBookingDcom';
 
-test('Book a hotel in Columbia for the next 5 days', async ({ page }: { page: Page }) => {
-  const homePage = new HomePage(page);
+test('Book a hotel in Columbia for the next 5 days', async ({ page }) => {
+  const homePage = new HomePageBookingDcom(page);
   
   // Navigate to the Booking.com website
   await homePage.navigate('https://www.booking.com');

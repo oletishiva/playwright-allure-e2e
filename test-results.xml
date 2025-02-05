@@ -1,6 +1,270 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.987520000000484">
-<testsuite name="bookingTest.spec.ts" timestamp="2025-01-28T17:46:03.043Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.247" errors="0">
-<testcase name="Book a hotel in Columbia for the next 5 days" classname="bookingTest.spec.ts" time="5.247">
+<testsuites id="" name="" tests="16" failures="4" skipped="0" errors="0" time="35.468441">
+<testsuite name="bookingTest.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="chromium" tests="1" failures="1" skipped="0" time="30.673" errors="0">
+<testcase name="Book a hotel in Columbia for the next 5 days" classname="bookingTest.spec.ts" time="30.673">
+<failure message="bookingTest.spec.ts:4:5 Book a hotel in Columbia for the next 5 days" type="FAILURE">
+<![CDATA[  [chromium] › bookingTest.spec.ts:4:5 › Book a hotel in Columbia for the next 5 days ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: Failed to dismiss the sign-in popup: {error.message}
+
+       at ../pages/HomePageBookingDcom.ts:42
+
+      40 |       await expect(this.crossPopUpToSignIn).not.toBeVisible({ timeout: 5000 });
+      41 |     } catch (error) {
+    > 42 |       throw new Error(`Failed to dismiss the sign-in popup: {error.message}`);
+         |             ^
+      43 |     }
+      44 |   }
+      45 |
+        at HomePageBookingDcom.dismissSignInPopup (/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts:42:13)
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/bookingTest.spec.ts:11:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="loginTestsWithTestData.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="chromium" tests="2" failures="0" skipped="0" time="8.532" errors="0">
+<testcase name="should login using test1@example.come" classname="loginTestsWithTestData.spec.ts" time="3.437">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-test1-example-come-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="should login using john@example.come" classname="loginTestsWithTestData.spec.ts" time="5.095">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-john-example-come-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="LoginTestUsingPOM.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.465" errors="0">
+<testcase name="should login using POM" classname="LoginTestUsingPOM.spec.ts" time="3.465">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/LoginTestUsingPOM-should-login-using-POM-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ReactAppHomepageDashboardTest.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="chromium" tests="3" failures="1" skipped="0" time="3.585" errors="0">
+<testcase name="Verify visibility of homepage items" classname="ReactAppHomepageDashboardTest.spec.ts" time="1">
+<system-out>
+<![CDATA[Page Title: playwright-test-admin Demo Application
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-e0d17-isibility-of-homepage-items-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="verify the page using screenshot" classname="ReactAppHomepageDashboardTest.spec.ts" time="1.964">
+<failure message="ReactAppHomepageDashboardTest.spec.ts:34:5 verify the page using screenshot" type="FAILURE">
+<![CDATA[  [chromium] › ReactAppHomepageDashboardTest.spec.ts:34:5 › verify the page using screenshot ───────
+
+    Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png, writing actual.
+
+      34 | test('verify the page using screenshot',async({page})=>{
+      35 |     // ✅ Takes a screenshot and compares it with the stored baseline
+    > 36 |     await expect(page).toHaveScreenshot("homepage.png");
+         |     ^
+      37 | })
+      38 |
+      39 | test('Verify page title',async({page})=>{
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5
+
+    attachment #1: homepage-expected.png (image/png) ───────────────────────────────────────────────
+    tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: homepage-actual.png (image/png) ─────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/homepage-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-chromium-darwin.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/homepage-actual.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify page title" classname="ReactAppHomepageDashboardTest.spec.ts" time="0.621">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardTest-Verify-page-title-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.671" errors="0">
+<testcase name="Login success" classname="test.spec.ts" time="2.671">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/test-Login-success-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="bookingTest.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="firefox" tests="1" failures="1" skipped="0" time="30.092" errors="0">
+<testcase name="Book a hotel in Columbia for the next 5 days" classname="bookingTest.spec.ts" time="30.092">
+<failure message="bookingTest.spec.ts:4:5 Book a hotel in Columbia for the next 5 days" type="FAILURE">
+<![CDATA[  [firefox] › bookingTest.spec.ts:4:5 › Book a hotel in Columbia for the next 5 days ───────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: Failed to dismiss the sign-in popup: {error.message}
+
+       at ../pages/HomePageBookingDcom.ts:42
+
+      40 |       await expect(this.crossPopUpToSignIn).not.toBeVisible({ timeout: 5000 });
+      41 |     } catch (error) {
+    > 42 |       throw new Error(`Failed to dismiss the sign-in popup: {error.message}`);
+         |             ^
+      43 |     }
+      44 |   }
+      45 |
+        at HomePageBookingDcom.dismissSignInPopup (/Users/shivaoleti/CodeRepoPractice/playwrightDP/pages/HomePageBookingDcom.ts:42:13)
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/bookingTest.spec.ts:11:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/bookingTest-Book-a-hotel-in-Columbia-for-the-next-5-days-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="loginTestsWithTestData.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="firefox" tests="2" failures="0" skipped="0" time="6.558" errors="0">
+<testcase name="should login using test1@example.come" classname="loginTestsWithTestData.spec.ts" time="3.375">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-test1-example-come-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="should login using john@example.come" classname="loginTestsWithTestData.spec.ts" time="3.183">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/loginTestsWithTestData-should-login-using-john-example-come-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="LoginTestUsingPOM.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="firefox" tests="1" failures="0" skipped="0" time="3.177" errors="0">
+<testcase name="should login using POM" classname="LoginTestUsingPOM.spec.ts" time="3.177">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/LoginTestUsingPOM-should-login-using-POM-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ReactAppHomepageDashboardTest.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="firefox" tests="3" failures="1" skipped="0" time="4.692" errors="0">
+<testcase name="Verify visibility of homepage items" classname="ReactAppHomepageDashboardTest.spec.ts" time="0.807">
+<system-out>
+<![CDATA[Page Title: playwright-test-admin Demo Application
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-e0d17-isibility-of-homepage-items-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="verify the page using screenshot" classname="ReactAppHomepageDashboardTest.spec.ts" time="3.09">
+<failure message="ReactAppHomepageDashboardTest.spec.ts:34:5 verify the page using screenshot" type="FAILURE">
+<![CDATA[  [firefox] › ReactAppHomepageDashboardTest.spec.ts:34:5 › verify the page using screenshot ────────
+
+    Error: A snapshot doesn't exist at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png, writing actual.
+
+      34 | test('verify the page using screenshot',async({page})=>{
+      35 |     // ✅ Takes a screenshot and compares it with the stored baseline
+    > 36 |     await expect(page).toHaveScreenshot("homepage.png");
+         |     ^
+      37 | })
+      38 |
+      39 | test('Verify page title',async({page})=>{
+        at /Users/shivaoleti/CodeRepoPractice/playwrightDP/tests/ReactAppHomepageDashboardTest.spec.ts:36:5
+
+    attachment #1: homepage-expected.png (image/png) ───────────────────────────────────────────────
+    tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: homepage-actual.png (image/png) ─────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/homepage-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tests/ReactAppHomepageDashboardTest.spec.ts-snapshots/homepage-firefox-darwin.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/homepage-actual.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardT-11b00-y-the-page-using-screenshot-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verify page title" classname="ReactAppHomepageDashboardTest.spec.ts" time="0.795">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ReactAppHomepageDashboardTest-Verify-page-title-firefox/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="test.spec.ts" timestamp="2025-02-05T15:37:12.689Z" hostname="firefox" tests="1" failures="0" skipped="0" time="2.744" errors="0">
+<testcase name="Login success" classname="test.spec.ts" time="2.744">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/test-Login-success-firefox/video.webm]]
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>

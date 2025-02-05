@@ -1,6 +1,5 @@
 import {test,expect} from '@playwright/test'
-import { LoginPage } from '../page-objects/login-page.pom'
-import { log } from 'console';
+import { LoginPage } from '../pages/LoginPage'
 
 test('Login success',async({page})=>{
 
