@@ -58,15 +58,15 @@ test('test login page', {
 ## command Line
 ** various commandLine tools used in playwright
 <details>
-*** Run all the tests
+*Run all the tests
 
 npx playwright test
 
-*** Run a single test file
+*Run a single test file
 
 npx playwright test tests/todo-page.spec.ts
 
-*** Run a set of test files
+-Run a set of test files
 
 npx playwright test tests/todo-page/ tests/landing-page/
 
